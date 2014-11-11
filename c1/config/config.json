@@ -1,0 +1,105 @@
+{
+    "site":{
+        "name":"C1: Game Programming",
+        "desc":"want to create your own game?"
+    },
+
+    "author":{
+        "name":"Yann Guineau",
+        "email":"yann.guineau@voidmx.net",
+        "url":"http://yann.voidmx.net/"
+    },
+
+    "favicon":"c1/assets/imgs/favicon.ico",
+
+    "css":[
+        "common/css/default.css",
+        "c1/assets/css/c1.css"
+    ],
+
+    "js":[
+        "c1/assets/js/app.js"
+    ],
+
+    "menu":[
+        {
+            "name":"Main",
+            "submenu":[
+                {
+                    "name":"Home",
+                    "url":"index"
+                },
+                {
+                    "name":"About",
+                    "url":"about"
+                },
+                {
+                    "name":"Projects",
+                    "url":"projects"
+                }
+            ]
+        },
+        {
+            "name":"Course",
+            "submenu":[
+                {
+                    "name":"Introduction",
+                    "url":"introduction"
+                },
+                {
+                    "name":"Architecture",
+                    "url":"architecture"
+                },
+                {
+                    "name":"Game Engine",
+                    "url":"engine"
+                },
+                {
+                    "name":"Modeling",
+                    "url":"modeling"
+                },
+                {
+                    "name":"Animation",
+                    "url":"animation"
+                },
+                {
+                    "name":"GPU Shaders",
+                    "url":"gpu"
+                },
+                {
+                    "name":"Artificial Intelligence",
+                    "url":"ai"
+                },
+                {
+                    "name":"Network Multiplayer",
+                    "url":"network"
+                },
+                {
+                    "name":"Sound in game",
+                    "url":"sound"
+                },
+                {
+                    "name":"Game Physics",
+                    "url":"physics"
+                },
+                {
+                    "name":"Final Review",
+                    "url":"final"
+                }
+            ]
+        },
+        {
+            "name":"Resources",
+            "submenu":[
+                {
+                    "name":"General",
+                    "url":"general"
+                },
+                {
+                    "name":"Engines",
+                    "url":"engines"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ config.site.name }}</title>
+    <link rel="icon" href="{{ url(config.favicon) }}" />
+{% for css in config.css %}
+    <link rel="stylesheet" href="{{ url(css) }}" />
+{% endfor %}
+</head>
+<body>
+    <header>
+        <div id="title">
+            <h1>{{ config.site.name }}</h1>
+            <h2>{{ config.site.desc }}</h2>
+        </div>
+    </header>
+    <section>
+        <aside>
+{% for menu in config.menu %}
+            <div class="menu">{{ menu.name }}</div>
+{% for submenu in menu.submenu %}
+                <div class="submenu{% if submenu.url == page %} active{% endif %}"><a href="{{ url(app ~ '/' ~ submenu.url) }}">{{ submenu.name }}</a></div>
+{% endfor %}
+{% endfor %}
+        </aside>
+        <article>
+            {{ markdown(block('content')) }}
+        </article>
+    </section>
+    <footer>
+        <hr />
+        <p>Course by {{ config.author.name }}</p>
+    </footer>
+{% for js in config.js %}
+    <script type="text/javascript" src="{{ url(js) }}"></script>
+{% endfor %}
+</body>
+</html>
