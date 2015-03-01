@@ -23,7 +23,7 @@
     </section>
 
     <section id="main" class="content mod">
-        {{ markdown(block('content')) }}
+        {{ markdown(include('doc/index.md')) }}
     </section>
 
     <center>&copy;2015 - {{ config.site.name }}</center>

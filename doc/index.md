@@ -1,6 +1,3 @@
-{% extends 'app/view/default.tpl.html' %}
-
-{% block content %}
 Game Computer
 =============
 
@@ -25,4 +22,3 @@ Pellentesque vitae ante luctus, placerat nisl in, rhoncus risus. Ut ipsum tortor
     echo "do break this code";
 ?>
 ```
-{% endblock %}
