@@ -21,7 +21,7 @@ else
     if(file_exists(APP."/view/404.tpl.html"))
         echo $twig->render(APP."/view/404.tpl.html", $vars);
     else
-        echo $twig->render("common/view/404.tpl.html", $vars);
+        echo $twig->render("app/view/404.tpl.html", $vars);
 }
 
 ?>

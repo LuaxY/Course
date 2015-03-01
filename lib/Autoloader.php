@@ -1,21 +1,21 @@
 <?php
 
-require_once "./lib/Parsedown/Parsedown.php";
-require_once "./lib/Twig/Autoloader.php";
+require_once "Parsedown/Parsedown.php";
+require_once "Twig/Autoloader.php";
 
 /**
  * URL
  */
 $url  = explode('/', htmlentities(substr($_SERVER['PATH_INFO'], 1)));
 
-if(count($url) < 2)
+if(count($url) < 1)
 {
     echo "Bad request :(";
     exit(0);
 }
 
-define('APP', $url[0]);
-define('PAGE', ($url[1] ? $url[1] : 'index'));
+define('APP', 'app');
+define('PAGE', ($url[0] ? $url[0] : 'index'));
 define('BASE_URL', str_replace("\\", "", dirname($_SERVER['SCRIPT_NAME'])));
 
 function url($url = null)

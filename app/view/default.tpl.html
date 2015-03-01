@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ config.site.name }}</title>
+    <link rel="icon" href="{{ url(config.favicon) }}" />
+{% for css in config.css %}
+    <link rel="stylesheet" href="{{ url(css) }}" />
+{% endfor %}
+</head>
+<body>
+    <section class="sidebar">
+        <a href=""><img src="public/imgs/eluna-logo.png" alt="{{ config.site.name }}" width="100"></a>
+        <div class="block">
+            <h2>Docs</h2>
+{% for menu in config.menu %}
+            <!--<div class="menu">{{ menu.name }}</div>-->
+{% for submenu in menu.submenu %}
+            <a class="mod" href="{{ url(submenu.url) }}">{{ submenu.name }}</a>
+{% endfor %}
+{% endfor %}
+        </div>
+    </section>
+
+    <section id="main" class="content mod">
+        {{ markdown(block('content')) }}
+    </section>
+
+    <center>&copy;2015 - {{ config.site.name }}</center>
+{% for js in config.js %}
+    <script type="text/javascript" src="{{ url(js) }}"></script>
+{% endfor %}
+</body>
+</html>

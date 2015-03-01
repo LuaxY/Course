@@ -1,24 +1,18 @@
 {
     "site":{
-        "name":"C1: Game Programming",
-        "desc":"want to create your own game?"
+        "name":"Course Doc"
     },
 
-    "author":{
-        "name":"Yann Guineau",
-        "email":"yann.guineau@voidmx.net",
-        "url":"http://yann.voidmx.net/"
-    },
-
-    "favicon":"c1/assets/imgs/favicon.ico",
+    "favicon":"public/imgs/favicon.ico",
 
     "css":[
-        "common/css/default.css",
-        "c1/assets/css/c1.css"
+        "public/eluna/normalize.css",
+        "public/eluna/main.css"
     ],
 
     "js":[
-        "c1/assets/js/app.js"
+        "public/eluna/jquery.js",
+        "public/eluna/main.js"
     ],
 
     "menu":[
