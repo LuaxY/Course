@@ -149,7 +149,7 @@ nav.sub {
 }
 
 .sidebar {
-    width: 200px;
+    width: 230px;
     position: absolute;
     left: 0;
     top: 0;
@@ -518,4 +518,15 @@ pre.rust { position: relative; }
 .toggle-label {
     color: #999;
     font-style: italic;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+.block > ul > li {
+    padding: 0;
 }

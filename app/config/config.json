@@ -7,93 +7,12 @@
 
     "css":[
         "public/eluna/normalize.css",
-        "public/eluna/main.css"
+        "public/eluna/main.css",
+        "public/treeview/treeview.css"
     ],
 
     "js":[
         "public/eluna/jquery.js",
         "public/eluna/main.js"
-    ],
-
-    "menu":[
-        {
-            "name":"Main",
-            "submenu":[
-                {
-                    "name":"Home",
-                    "url":"index"
-                },
-                {
-                    "name":"About",
-                    "url":"about"
-                },
-                {
-                    "name":"Projects",
-                    "url":"projects"
-                }
-            ]
-        },
-        {
-            "name":"Course",
-            "submenu":[
-                {
-                    "name":"Introduction",
-                    "url":"introduction"
-                },
-                {
-                    "name":"Architecture",
-                    "url":"architecture"
-                },
-                {
-                    "name":"Game Engine",
-                    "url":"engine"
-                },
-                {
-                    "name":"Modeling",
-                    "url":"modeling"
-                },
-                {
-                    "name":"Animation",
-                    "url":"animation"
-                },
-                {
-                    "name":"GPU Shaders",
-                    "url":"gpu"
-                },
-                {
-                    "name":"Artificial Intelligence",
-                    "url":"ai"
-                },
-                {
-                    "name":"Network Multiplayer",
-                    "url":"network"
-                },
-                {
-                    "name":"Sound in game",
-                    "url":"sound"
-                },
-                {
-                    "name":"Game Physics",
-                    "url":"physics"
-                },
-                {
-                    "name":"Final Review",
-                    "url":"final"
-                }
-            ]
-        },
-        {
-            "name":"Resources",
-            "submenu":[
-                {
-                    "name":"General",
-                    "url":"general"
-                },
-                {
-                    "name":"Engines",
-                    "url":"engines"
-                }
-            ]
-        }
     ]
 }

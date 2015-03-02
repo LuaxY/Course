@@ -7,18 +7,14 @@
 {% for css in config.css %}
     <link rel="stylesheet" href="{{ url(css) }}" />
 {% endfor %}
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 </head>
 <body>
     <section class="sidebar">
         <a href=""><img src="public/imgs/eluna-logo.png" alt="{{ config.site.name }}" width="100"></a>
         <div class="block">
             <h2>Docs</h2>
-{% for menu in config.menu %}
-            <!--<div class="menu">{{ menu.name }}</div>-->
-{% for submenu in menu.submenu %}
-            <a class="mod" href="{{ url(submenu.url) }}">{{ submenu.name }}</a>
-{% endfor %}
-{% endfor %}
+            {{ generate_menu() }}
         </div>
     </section>
 
