@@ -92,7 +92,7 @@
             }
             else return false;
             $uri = str_replace(array('//', '../'), '/', trim($uri, '/'));
-            if ($uri == "") $uri = "first_page";
+            if ($uri == "") $uri = "index";
             return $uri;
         }
 

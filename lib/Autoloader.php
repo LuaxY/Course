@@ -74,6 +74,63 @@ function build_navigation($tree, $path, $current_url, $base_page)
     return $nav;
 }
 
+function print_page()
+{
+    echo handle_request();
+}
+
+function handle_request()
+{
+    $request = DauxHelper::get_request();
+    $request = urldecode($request);
+    $request_type = isset($query['method']) ? $query['method'] : '';
+    /*if($request == 'first_page') {
+        $request = $tree->first_page->uri;
+    }*/
+
+    return get_page($request);
+}
+
+function get_page($request)
+{
+    $tree = DauxHelper::build_directory_tree(ROOT."\doc");
+    $file = get_file_from_request($request, $tree);
+    /*var_dump($file);
+    die();*/
+
+    if ($file === false)
+    {
+        return "potato";
+    }
+
+    return markdown(file_get_contents($file->local_path));
+}
+
+function get_file_from_request($request, $tree, $get_first_file = false)
+{
+    $request = explode('/', $request);
+    foreach ($request as $node)
+    {
+        if ($tree->type === 'DIRECTORY_TYPE') {
+            if (isset($tree->value[$node])) $tree = $tree->value[$node];
+            else {
+                if ($node === 'index' || $node === 'index.md') {
+                    if ($get_first_file) {
+                        return ($tree->index_page) ? $tree->index_page : $tree->first_page;
+                    } else {
+                        return $tree->index_page;
+                    }
+                } else return false;
+            }
+        } else return false;
+    }
+    if ($tree->type === 'DIRECTORY_TYPE') {
+        return $tree->index_page;
+    } else {
+        return $tree;
+    }
+}
+
 /**
  * Call Twig lib to process template display
  */
@@ -84,3 +141,4 @@ $twig->addFunction(new Twig_SimpleFunction('url', 'url'));
 $twig->addFunction(new Twig_SimpleFunction('markdown', 'markdown'));
 $twig->addFunction(new Twig_SimpleFunction('dump', 'var_dump'));
 $twig->addFunction(new Twig_SimpleFunction('generate_menu', 'generate_menu'));
+$twig->addFunction(new Twig_SimpleFunction('print_page', 'print_page'));
